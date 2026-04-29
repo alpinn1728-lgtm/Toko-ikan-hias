@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aquafishstore Ikan Hias</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 50px;
+    background-color: #006064;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 50px;
+}
+
+.hero-text {
+    max-width: 480   px;
+}
+
+.hero-text h1 {
+    font-size: 46px;
+    color: #004d40;
+}
+
+.hero-text p {
+    font-size: 17px;
+    color: #333;
+    margin: 20px 0;
+}
+
+.hero-text button {
+    padding: 12px 22px;
+    background-color: #00838f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.hero-img {
+    width: 420px;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.produk-section {
+    padding: 50px;
+    background-color: #ffffff;
+}
+
+.produk-section h2 {
+    text-align: center;
+    color: #006064;
+    margin-bottom: 40px;
+}
+
+.produk {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background-color: #e0f2f1;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 12px 0 5px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #444;
+}
+
+.card strong {
+    display:block;
+    margin: 10px 0;
+    color: #004d40;
+}
+
+.card button {
+    background-color: #006064;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#bayar {
+    display: none;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #e0f2f1;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #006064;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>🐠 AquaFishStore</h2>
+     <small>👥 Pengunjung: <span id="visitorCount">0</span></small>
+    <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#alamat">Alamat</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+    </ul>
+</nav>
+
+<section id="beranda" class="hero">
+    <div class="hero-text">
+        <h1>Ikan Hias Sehat & Berkualitas</h1>
+        <p>Menyediakan berbagai jenis ikan hias air tawar dan laut yang dirawat secara profesional.</p>
+        <button onclick="document.getElementById('produk').scrollIntoView()">Lihat Semua Produk</button>
+    </div>
+
+    <div class="hero-img">
+        <img src="Toko ikan hias.png">
+    </div>
+</section>
+
+<section id="produk" class="produk-section">
+    <h2>Produk Unggulan</h2>
+
+    <div class="produk">
+        <div class="card">
+            <img src="Platy.png">
+            <h3>Ikan Platy</h3>
+            <p>Aktif dan lucu</p>
+            <strong>Rp 10.000</strong>
+            <button onclick="beli('Ikan platy',10000,'ukuran 3-5cm, Ikan platy mudah dirawat di aquarium ukuran kecil atau sedang. Sediakan filter ringan, tanaman air, dan ganti air rutin. Ikan ini aktif dan cocok dicampur dengan ikan damai lainnya.')">Beli</button>
+
+        </div>
+
+        <div class="card">
+            <img src="discus.png">
+            <h3>Ikan discus</h3>
+            <p>Ramah pemula</p>
+            <strong>Rp 12.000</strong>
+            <button onclick="beli('Ikan discus',12000,'ukuran 5-8cm, Ikan discus membutuhkan aquarium cukup besar dengan air hangat dan bersih dengan suhu 28-30°C. Gunakan filter yang baik, jaga suhu stabil, dan beri pakan berkualitas agar warna tetap cerah dan tubuh sehat..')">Beli</button>
+
+
+        </div>
+
+
+        <div class="card">
+            <img src="Guupy.png">
+            <h3>Ikan Guppy</h3>
+            <p>Kecil dan aktif</p>
+            <strong>Rp 15.000</strong>
+            <button onclick="beli('Ikan Guppy',15000,'ukuran 2-4cm, Ikan guppy cocok dipelihara di aquarium kecil atau sedang dengan air bersih dan suhu stabil. Beri makan 2 kali sehari dalam jumlah cukup, ganti air secara rutin, dan tambahkan tanaman air agar ikan lebih nyaman dan sehat..')">Beli</button>
+        </div>
+        
+        <div class="card">
+            <img src="Cupang.png">
+            <h3>Ikan cupang</h3>
+            <p>Warna cerah dan agresif</p>
+            <strong>Rp 25.000</strong>
+           <button onclick="beli('Ikan cupang',25000,'ukuran 3-6, Betta fish cocok dipelihara di aquarium kecil atau sedang dengan air tenang. Beri pakan 2 kali sehari dalam jumlah sedikit, jaga kebersihan air, dan hindari mencampur dua jantan dalam satu tempat karna mereka bisa saja berkelahi.')">Beli</button>
+        </div>
+
+        <div class="card">
+            <img src="Koi.png">
+            <h3>Ikan Koi</h3>
+            <p>Indah dan elegan</p>
+            <strong>Rp 110.000</strong>
+            <button onclick="beli('Ikan Koi',110000,'ukuran 10-15cm, Ikan koi cocok dipelihara di kolam atau aquarium besar dengan air bersih dan sirkulasi lancar. Beri pakan teratur 2 kali sehari, ganti air secara rutin, dan hindari kolam terlalu penuh agar koi tumbuh sehat dan nyaman berenang.')">Beli</button>
+
+        </div>
+
+        <div class="card">
+            <img src="Arwana.png">
+            <h3>Ikan Arwana</h3>
+            <p>Eksotis</p>
+            <strong>Rp 150.000</strong>
+            <button onclick="beli('Ikan Arwana',150000,'ukuran 13-20cm, Ikan arwana cocok dipelihara di aquarium besar dan panjang agar bisa berenang bebas. Gunakan air bersih, beri makan rutin 2 kali sehari, dan pasang penutup aquarium karena arwana sering melompat.')">Beli</button>
+        </div>
+    </div>
+</section>
+
+<section id="bayar" class="produk-section">
+    <h2>Form Pembayaran</h2>
+
+    <p><strong>Produk:</strong> <span id="namaProduk"></span></p>
+    <p><strong>Total:</strong> Rp <span id="hargaProduk"></span></p>
+   <p><strong>Deskripsi:</strong> <span id="deskripsiProduk"></span></p>
+   <label>Jumlah Beli</label> <div style="display:flex; align-items:center; gap:10px;">
+     <button type="button" onclick="kurang()">➖</button>
+
+     <input type="number" id="jumlah" value="1" min="1" readonly style="width:60px; text-align:center;"> 
+     
+     <button type="button" onclick="tambah()">➕</button> 
+    
+    </div>
+
+   <p><strong>Total Bayar:</strong> Rp <span id="totalHarga"></span></p>
+
+   <form onsubmit="bayar(event)">
+
+        <label>Nama Lengkap</label> 
+        <textarea id="namapembeli" required></textarea>
+        
+        <label>Alamat Lengkap</label>
+        <textarea id="alamatPembeli" required></textarea>
+
+        <label>No HP</label>
+        <input type="text" id="hpPembeli" required>
+
+        <label>Metode Pembayaran</label>
+        <select id="metode" required>
+            <option value="">-- Pilih --</option>
+            <option>Transfer Bank   </option>
+            <option>COD</option>
+            <option>QRIS</option>
+        </select>
+
+        <button type="submit">Bayar Sekarang</button>
+    </form>
+</section>
+
+<section id="alamat" class="produk-section">
+    <h2>Alamat Toko</h2>
+    <p style="text-align:center;">Jatian pondok dalem</p>
+</section>
+
+<section id="kontak" class="produk-section">
+    <h2>Kontak</h2>
+    <p style="text-align:center;">WhatsApp: 085126672841</p>
+</section>
+
+<script>
+let count = localStorage.getItem("visitorCount");
+
+if (count === null) {
+    count = 0;
+}
+
+count++;
+localStorage.setItem("visitorCount", count);
+
+document.getElementById("visitorCount").innerText = count;
+
+let produk = "";
+let harga = 0;
+let deskripsi = "";
+
+function tambah() {
+    let jumlah = document.getElementById("jumlah");
+    jumlah.value = parseInt(jumlah.value) + 1;
+    hitungTotal();
+}
+
+function kurang() {
+    let jumlah = document.getElementById("jumlah");
+    if (jumlah.value > 1) {
+        jumlah.value = parseInt(jumlah.value) - 1;
+        hitungTotal();
+    }
+}
+
+function hitungTotal() {
+    let j = document.getElementById("jumlah").value;
+    let total = harga * j;
+    document.getElementById("totalHarga").innerText = total.toLocaleString("id-ID");
+}
+
+function beli(n, h, d) {
+    produk = n;
+    harga = h;
+    deskripsi = d;
+
+    document.getElementById("namaProduk").innerText = n;
+    document.getElementById("hargaProduk").innerText = h;
+    document.getElementById("deskripsiProduk").innerText = d;
+
+    document.getElementById("bayar").style.display = "block";
+    document.getElementById("bayar").scrollIntoView({behavior:"smooth"});
+
+    document.getElementById("jumlah").value = 1;
+    hitungTotal();
+}
+
+function bayar(e) {
+    e.preventDefault();
+    alert("Pembayaran berhasil!\n\nProduk: " + produk);
+}
+</script>
+
+</body>
+</html>
